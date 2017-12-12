@@ -1,0 +1,23 @@
+{% extends "basicapp/base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+
+  {% if registered %}
+    <h1>we are happy to hear that you had registered with us</h1>
+    <p>join the world of innovation and conquer the and of pride </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h1>THAN YOU</h1>
+    <h1>for your love</h1>
+  {% else %}
+    <h1>please register here</h1>
+    <h3>join the millions </h3>
+    <h3>organize your self</h3>
+    <form enctype="multipart/form-data" method="POST">
+      {{ userform.as_p }}
+      {{ profileform.as_p }}
+      {% csrf_token %}
+      <input type="submit"value="submit">
+    </form>
+
+  {% endif %}
+{% endblock %}

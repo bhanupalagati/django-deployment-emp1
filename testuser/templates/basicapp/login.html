@@ -1,0 +1,19 @@
+{% extends "basicapp/base.html" %}
+
+{% block body_block %}
+<h1>Please Provide Your Credentials To Login To Your Account</h1>
+<form class="" action="{% url 'basicapp:user_login' %}" method="post">
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input type="text" name="username" placeholder="Enter your User name here">
+  <br>
+  <br>
+  <label for="password">Password</label>
+  <input type="password" name="password" >
+  <br>
+  <br>
+  {% csrf_token %}
+  <input type="submit" name="" value="Login">
+</form>
+
+{% endblock %}
